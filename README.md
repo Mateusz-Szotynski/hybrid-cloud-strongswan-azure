@@ -27,8 +27,8 @@ The tunnel allows on-prem LAN devices to securely access Azure resources such as
 **How to run**
 
 1. Install strongSwan on clear VM with linux (https://docs.strongswan.org/docs/latest/install/install.html)
-2. Set up Azure infrastructure with terraform files from `azure/`
-3. Copy config from `config/`, update with your IPs, secret and paste it to the `/etc/swanctl/conf.d/`
+2. Set up Azure infrastructure with terraform files from `azure/` and adjust **variable.tf** file to your needs
+3. Copy config file from `config/`, update with your IPs, secret and paste it to the `/etc/swanctl/conf.d/`
 4. Load connections:
    
     sudo swanctl --load-all
@@ -36,7 +36,6 @@ The tunnel allows on-prem LAN devices to securely access Azure resources such as
     sudo swanctl --initiate --child azure-net
 
 5. Add static routes on LAN clients **or** configure your router if it supports static routing.
-6. Set up Azure Private DNS for private endpoints
 
 ----------------------------------------------------------------------------------
 
